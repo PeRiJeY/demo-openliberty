@@ -3,14 +3,20 @@
 
     <featureManager>
         <feature>microProfile-3.0</feature>
+        <feature>usr:opentracingZipkin-0.31</feature>
     </featureManager>
 
     <httpEndpoint id="defaultHttpEndpoint"
-                  httpPort="8080"
-                  httpsPort="8443"
+                  httpPort="8280"
+                  httpsPort="8380"
                   host="*"/>
+                  
+	<opentracingZipkin host="localhost"/>
 
-    <webApplication location="${project.name}.war" contextRoot="/"/>
+    <webApplication location="${project.name}.war" contextRoot="/">
+    	<!-- enable visibility to third party apis -->
+    	<classloader apiTypeVisibility="api,ibm-api,spec,stable,third-party"/>
+    </webApplication>
     <mpMetrics authentication="false"/>
 
     <!-- This is the keystore that will be used by SSL and by JWT. -->
@@ -20,4 +26,5 @@
     <!-- The MP JWT configuration that injects the caller's JWT into a ResourceScoped bean for inspection. -->
     <mpJwt id="jwtUserConsumer" keyName="theKeyId" audiences="targetService" issuer="${jwt.issuer}"/>
 
+    <logging consoleLogLevel="INFO"/>
 </server>

@@ -5,20 +5,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-	    <groupId>es.german.demo</groupId>
-	    <artifactId>microprofile-service-parent</artifactId>
-	    <version>0.0.1-SNAPSHOT</version>
+		<groupId>es.german.demo</groupId>
+		<artifactId>microprofile-service-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>microprofile-service-a</artifactId>
-	
+
 	<packaging>war</packaging>
 	<properties>
-		<openliberty.maven.version>3.1</openliberty.maven.version>
-		<final.name>microprofile</final.name>
+		<final.name>service-a</final.name>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
 		<openliberty.version>[19.0.0.9,)</openliberty.version>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -35,7 +32,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>microprofile</finalName>
+		<finalName>service-a</finalName>
 	</build>
 	<profiles>
 		<profile>
@@ -73,6 +70,29 @@
 								<jwt.issuer>https://server.example.com</jwt.issuer>
 							</bootstrapProperties>
 						</configuration>
+					</plugin>
+
+					<!-- For downloading files -->
+					<plugin>
+						<groupId>com.googlecode.maven-download-plugin</groupId>
+						<artifactId>download-maven-plugin</artifactId>
+						<version>${version.download-maven-plugin}</version>
+						<executions>
+							<execution>
+								<id>install-tracer</id>
+								<phase>prepare-package</phase>
+								<goals>
+									<goal>wget</goal>
+								</goals>
+								<configuration>
+									<url>${zipkin.usr.feature}</url>
+									<unpack>true</unpack>
+									<outputDirectory>
+										${project.build.directory}/liberty/wlp/usr
+									</outputDirectory>
+								</configuration>
+							</execution>
+						</executions>
 					</plugin>
 				</plugins>
 			</build>

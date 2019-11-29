@@ -4,6 +4,7 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.logging.Logger;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -14,6 +15,8 @@ import javax.ws.rs.PathParam;
 @Path("/client")
 @ApplicationScoped
 public class ClientController {
+	
+	Logger logger = Logger.getLogger(this.getClass().getName()); 
 
     @Inject
     @RestClient
@@ -27,6 +30,8 @@ public class ClientController {
         String hostname = ip.getHostName();
         
         String result = service.doSomething(parameter);
+        
+        logger.info(hostname + ": " + result);
         
         return hostname + ": " + result;
     }
