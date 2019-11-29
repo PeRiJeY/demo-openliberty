@@ -4,9 +4,13 @@
 	xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>es.german.demo</groupId>
+	<parent>
+	    <groupId>es.german.demo</groupId>
+	    <artifactId>microprofile-service-parent</artifactId>
+	    <version>0.0.1-SNAPSHOT</version>
+	</parent>
 	<artifactId>microprofile-service-b</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	
 	<packaging>war</packaging>
 	<properties>
 		<openliberty.maven.version>3.1</openliberty.maven.version>

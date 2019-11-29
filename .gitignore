@@ -1,9 +1,12 @@
-service-a/.settings/
-service-a/target/
-service-a/.project
-service-a/.classpath
+/.settings/
+/.project
 
-service-b/.settings/
-service-b/target/
-service-b/.project
-service-b/.classpath
+microprofile-service-a/.settings/
+microprofile-service-a/target/
+microprofile-service-a/.project
+microprofile-service-a/.classpath
+
+microprofile-service-b/.settings/
+microprofile-service-b/target/
+microprofile-service-b/.project
+microprofile-service-b/.classpath
