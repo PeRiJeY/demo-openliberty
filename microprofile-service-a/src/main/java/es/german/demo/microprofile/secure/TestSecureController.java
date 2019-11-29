@@ -8,12 +8,16 @@ import io.vertx.ext.jwt.JWTOptions;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
+
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,6 +28,10 @@ import java.util.UUID;
 @Path("/secured")
 @ApplicationScoped
 public class TestSecureController {
+	
+	@Inject
+    @ConfigProperty(name = "es.german.demo.microprofile.secure.service")
+	private String urlSecuredService;
 
     private String key;
 
