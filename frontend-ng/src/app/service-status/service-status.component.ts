@@ -22,7 +22,7 @@ export class ServiceStatusComponent implements OnInit {
 
 	ngOnInit() {
 		this.refresh();
-		interval(5000).subscribe(() => this.refresh());
+		interval(3000).subscribe(() => this.refresh());
 	}
 
 	refresh() {

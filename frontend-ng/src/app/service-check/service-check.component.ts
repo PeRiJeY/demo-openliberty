@@ -11,11 +11,11 @@ export class ServiceCheckComponent implements OnInit {
 
 	services = [
 		environment.urlServiceA,
-		environment.urlServiceB,
-		environment.urlServiceC,
+		environment.urlServiceA,
 		environment.urlServiceA,
 		environment.urlServiceB,
-		environment.urlServiceC];
+		environment.urlServiceB,
+		environment.urlServiceB];
 
 	constructor() { }
 
