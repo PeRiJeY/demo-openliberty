@@ -10,3 +10,10 @@ microprofile-service-b/.settings/
 microprofile-service-b/target/
 microprofile-service-b/.project
 microprofile-service-b/.classpath
+
+microprofile-common/.settings/
+microprofile-common/target/
+microprofile-common/.project
+microprofile-common/.classpath
+
+frontend-ng/node_modules/

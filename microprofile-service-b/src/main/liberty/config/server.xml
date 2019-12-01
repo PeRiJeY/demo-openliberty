@@ -26,4 +26,10 @@
     <mpJwt id="jwtUserConsumer" keyName="theKeyId" audiences="targetService" issuer="${jwt.issuer}"/>
 
     <logging consoleLogLevel="INFO"/>
+    
+    <cors domain="/"
+	    allowedOrigins="*"
+	    allowedMethods="*"
+	    allowedHeaders="*"
+	    allowCredentials="true"/>
 </server>

@@ -1,5 +1,5 @@
 FROM java:8
 WORKDIR /
-ADD target/microprofile.jar microprofile.jar
-EXPOSE 8080
-CMD java -jar microprofile.jar
+ADD target/service-a.jar service-a.jar
+EXPOSE 8280
+CMD java -jar service-a.jar

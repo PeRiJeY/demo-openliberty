@@ -1,0 +1,23 @@
+<mat-card class="card">
+	<mat-card-header class="header" [ngClass]="{'service-down': status!='UP' }">
+		<mat-card-title>{{service}}</mat-card-title>
+		<mat-card-subtitle>{{status}}</mat-card-subtitle>
+	</mat-card-header>
+	<mat-card-content class="content">
+		<mat-list role="list">
+			<mat-list-item role="listitem">
+				<div class="label">Name:</div>
+				<div class="value">{{name}}</div>
+			</mat-list-item>
+			<mat-list-item role="listitem">
+				<div class="label">Version:</div>
+				<div class="value">{{version}}</div>
+			</mat-list-item>
+			<mat-list-item role="listitem">
+				<div class="label">Hostname:</div>
+				<div class="value">{{hostname}}</div>
+			</mat-list-item>
+		</mat-list>
+		<div class="footer">Updated: {{lastResponse}}</div>
+	</mat-card-content>
+</mat-card>

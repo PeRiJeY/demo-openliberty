@@ -8,3 +8,9 @@ There are 2 projects generated so that the examples for the Rest Client and/or J
 . In the `service-b` directory, you can find some endpoints which will be called by code within the client application. This can be seen as the 'backend'.
 
 Have a look in the `readme.md` file in each directory which describes how each project can be built and run.
+
+## ZipKin (OpenTrace)
+Start server with:
+docker run --name zipkin --rm -p 9411:9411 openzipkin/zipkin
+
+Open [http://localhost:9411/](http://localhost:9411/)
