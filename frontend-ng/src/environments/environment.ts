@@ -3,10 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  	production: false,
+	production: false,
+	listTestServices: [
+		'http://localhost:8280/data/hello',
+		'http://localhost:8280/health/',
+		'http://localhost:8280/data/client/test/miParametro',
+		'http://localhost:8281/data/client/service/miParametro',
+		'http://localhost:8281/health/',
+		'http://localhost:8280/data/secured/token',
+		'http://localhost:8281/data/protected'
+	],
 	urlServiceA: 'http://localhost:8280/health/',
-	urlServiceB: 'http://localhost:8281/health/',
-	urlServiceC: 'http://localhost:8282/health/'
+	urlServiceB: 'http://localhost:8281/health/'
 };
 
 /*

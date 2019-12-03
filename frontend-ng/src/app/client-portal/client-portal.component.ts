@@ -1,7 +1,7 @@
-
-
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+
+import { environment } from './../../environments/environment';
 
 @Component({
 	selector: 'app-client-portal',
@@ -11,15 +11,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 export class ClientPortalComponent implements OnInit {
 
 	requestResult: string;
-
-	listUrl: string[] = [
-		'http://localhost:8280/data/hello',
-		'http://localhost:8280/health/',
-		'http://localhost:8281/data/client/service/test',
-		'http://localhost:8281/health/',
-		'http://localhost:8280/data/secured/token',
-		'http://localhost:8281/data/protected'
-	];
+	listUrl = environment.listTestServices;
 	selectedUrl: string;
 	authorizationValue = '';
 
