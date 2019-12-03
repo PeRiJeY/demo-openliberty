@@ -5,7 +5,8 @@ import { ServiceCheckComponent } from './service-check/service-check.component';
 
 
 const routes: Routes = [
-	{ path: '', component: NgHomeComponent },
+	{ path: '', redirectTo: 'service-check', pathMatch: 'full' },
+	{ path: 'home', component: NgHomeComponent },
 	{ path: 'service-check', component: ServiceCheckComponent }
 ];
 
