@@ -1,0 +1,23 @@
+<div class="example-container">
+    <mat-form-field>
+        <mat-label>Templates:</mat-label>
+        <mat-select [(value)]="selectedUrl">
+            <mat-option *ngFor="let option of listUrl" [value]="option">
+                {{option}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-container">
+        <input matInput #service_a_hello placeholder="URL to check:" value={{selectedUrl}}>
+    </mat-form-field>
+    <mat-form-field class="example-container">
+        <textarea matInput placeholder="Authorization Header" (change)="updateTextArea($event)">{{authorizationValue}}</textarea>
+    </mat-form-field>
+    <button mat-button (click)="onClickButton(service_a_hello.value)">Send</button>
+</div>
+
+<mat-card>
+    <mat-card-title>Results</mat-card-title>
+    <mat-card-content>{{requestResult}}</mat-card-content>
+</mat-card>

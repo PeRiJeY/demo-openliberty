@@ -39,6 +39,15 @@ public class TestSecureController {
     public void init() {
         key = readPemFile();
     }
+    
+    @GET
+    @Path("/token")
+    public String getTokenJWT() {
+        if (key == null) {
+            throw new WebApplicationException("Unable to read privateKey.pem", 500);
+        }
+        return generateJWT(key);
+    }
 
     @GET
     @Path("/test")
