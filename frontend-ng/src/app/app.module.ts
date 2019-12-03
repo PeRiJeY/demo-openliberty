@@ -16,7 +16,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceCheckComponent } from './service-check/service-check.component';
-import { NgHomeComponent } from './ng-home/ng-home.component';
 import { ServiceStatusComponent } from './service-status/service-status.component';
 import { ClientPortalComponent } from './client-portal/client-portal.component';
 
@@ -24,7 +23,6 @@ import { ClientPortalComponent } from './client-portal/client-portal.component';
 	declarations: [
 		AppComponent,
 		ServiceCheckComponent,
-		NgHomeComponent,
 		ServiceStatusComponent,
 		ClientPortalComponent
 	],
